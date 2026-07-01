@@ -1,5 +1,10 @@
+<script setup>
+import  AppHeader  from "./components/common/AppHeader.vue";
+import  HeroSection  from "./components/home/HeroSection.vue";
+</script>
 <template>
   <div>
-   <h1 class="text-red-900 bg-green-700">Project setup complete</h1>
+    <AppHeader />
+    <HeroSection />
   </div>
 </template>
