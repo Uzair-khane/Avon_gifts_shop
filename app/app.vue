@@ -1,5 +1,5 @@
 <template>
   <div>
-   <h1>Project setup complete</h1>
+   <h1 class="text-red-900 bg-green-700">Project setup complete</h1>
   </div>
 </template>
