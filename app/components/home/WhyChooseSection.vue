@@ -104,12 +104,12 @@ onMounted(() => {
           Why Choose Us
         </p>
 
-        <h2 class="max-w-xl text-4xl font-black leading-tight tracking-tight text-[#071c15] sm:text-5xl lg:text-6xl">
+        <h2 class="max-w-xl text-2xl font-black leading-tight tracking-tight text-[#071c15] sm:text-3xl lg:text-4xl">
           Why Choose Avon?
         </h2>
 
         <p class="mt-6 max-w-2xl text-lg leading-8 text-[#3f5a50]">
-          We don't just deliver gifts — we deliver emotions, wrapped in elegance
+          We don't just deliver gifts  we deliver emotions, wrapped in elegance
           and presented with care.
         </p>
 

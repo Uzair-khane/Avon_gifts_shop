@@ -53,7 +53,7 @@ const services = [
           Our Services
         </p>
 
-        <h2 class="text-4xl font-black leading-tight tracking-tight text-[#071c15] sm:text-5xl lg:text-6xl">
+        <h2 class="text-3xl font-black leading-tight tracking-tight text-[#071c15] sm:text-4xl lg:text-5xl">
           Crafted for Every Beautiful Moment
         </h2>
 
@@ -90,7 +90,7 @@ const services = [
           <div class="relative p-7 sm:p-8">
             <div class="mb-5 h-[2px] w-14 rounded-full bg-[#b68a2c] transition-all duration-500 group-hover:w-28"></div>
 
-            <h3 class="text-2xl font-black tracking-tight text-[#071c15] sm:text-3xl">
+            <h3 class="text-xl font-black tracking-tight text-[#071c15] sm:text-2xl">
               {{ service.title }}
             </h3>
 
