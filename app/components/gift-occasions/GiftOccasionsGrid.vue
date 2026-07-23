@@ -1,13 +1,11 @@
 <script setup>
 import { ref, onMounted, nextTick } from 'vue';
-// Apne composable ka path yahan zaroor check kar lein
-import { useFreshFlowers } from '~/composables/useFreshFlowers';
+import { useGiftOccasions } from '~/composables/useGiftOccasions';
 
-const { categories, getByCategory } = useFreshFlowers();
+const { categories, getByCategory } = useGiftOccasions();
 const rootEl = ref(null);
 
 onMounted(async () => {
-  // nextTick lagana zaroori hai taake pehle DOM render ho jaye, phir observer chale
   await nextTick();
 
   const observer = new IntersectionObserver(
@@ -30,7 +28,7 @@ onMounted(async () => {
 <template>
   <section
     ref="rootEl"
-    class="relative overflow-hidden bg-[#fbf7ef] px-4 pb-24 pt-16 sm:px-6 lg:px-8 font-sans"
+    class="relative overflow-hidden bg-[#fbf7ef] px-8 pb-24 pt-16 sm:px-12 lg:px-20 font-sans"
   >
     <div class="pointer-events-none absolute -left-20 top-1/4 h-[500px] w-[500px] rounded-full bg-[#d08f86]/15 blur-[100px]"></div>
     <div class="pointer-events-none absolute -right-20 bottom-1/4 h-[500px] w-[500px] rounded-full bg-[#0f3d2e]/10 blur-[100px]"></div>
@@ -45,7 +43,7 @@ onMounted(async () => {
         <div class="reveal mb-12 flex flex-col gap-4 border-b border-[#0f3d2e]/15 pb-6 sm:flex-row sm:items-end sm:justify-between">
           <div class="max-w-2xl">
             <div class="mb-4 flex items-center gap-3">
-              <span class="text-2xl">{{ cat.icon }}</span>
+             
               <p class="text-xs font-bold uppercase tracking-[0.3em] text-[#b68a2c]">
                 Collection
               </p>
@@ -53,7 +51,7 @@ onMounted(async () => {
                 {{ getByCategory(cat.slug).length }} Items
               </span>
             </div>
-            <h2 class="text-2xl font-bold font-black leading-tight tracking-tight text-[#071c15] sm:text-3xl lg:text-4xl">
+            <h2 class="text-2xl font-black font-bold leading-tight tracking-tight text-[#071c15] sm:text-2xl lg:text-3xl">
               {{ cat.label }}
             </h2>
             <p class="mt-4 text-[16px] leading-relaxed text-[#3f5a50]">
@@ -69,17 +67,17 @@ onMounted(async () => {
           </div>
         </div>
 
-        <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:gap-10">
+        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:gap-6">
           <article
-            v-for="(flower, i) in getByCategory(cat.slug)"
-            :key="flower.id"
+            v-for="(gift, i) in getByCategory(cat.slug)"
+            :key="gift.id"
             :style="{ transitionDelay: `${(i % 3) * 100}ms` }"
             class="reveal group flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgb(15,61,46,0.06)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgb(15,61,46,0.12)] border border-[#0f3d2e]/5"
           >
-            <div class="relative aspect-[4/3] w-full overflow-hidden sm:aspect-[4/5]">
+            <div class="relative aspect-[3/2] w-full overflow-hidden sm:aspect-[4/3]">
               <img
-                :src="flower.image"
-                :alt="flower.name"
+                :src="gift.image"
+                :alt="gift.name"
                 loading="lazy"
                 class="h-full w-full object-cover transition-transform duration-[1500ms] ease-out group-hover:scale-110"
               />
@@ -87,24 +85,24 @@ onMounted(async () => {
               <div class="absolute inset-0 bg-gradient-to-t from-[#071c15]/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
 
               <span
-                v-if="flower.badge"
+                v-if="gift.badge"
                 class="absolute left-4 top-4 rounded-full bg-white/95 px-4 py-1.5 text-[11px] font-black uppercase tracking-widest text-[#0f3d2e] shadow-sm backdrop-blur-sm"
               >
-                {{ flower.badge }}
+                {{ gift.badge }}
               </span>
             </div>
 
-            <div class="relative flex flex-1 flex-col justify-between p-6 sm:p-8">
+            <div class="relative flex flex-1 flex-col justify-between p-4 sm:p-5">
               <div>
-                <div class="mb-4 h-[2px] w-8 rounded-full bg-[#b68a2c] transition-all duration-500 group-hover:w-16"></div>
+                <div class="mb-2 h-[2px] w-8 rounded-full bg-[#b68a2c] transition-all duration-500 group-hover:w-16"></div>
                 <h3 class="text-xl font-bold tracking-tight text-[#071c15] transition-colors duration-300 group-hover:text-[#0f3d2e]">
-                  {{ flower.name }}
+                  {{ gift.name }}
                 </h3>
               </div>
 
-              <div class="mt-8 flex items-center justify-between border-t border-[#0f3d2e]/5 pt-6">
+              <div class="mt-4 flex items-center justify-between border-t border-[#0f3d2e]/5 pt-3">
                 <span class="text-xl font-black text-[#0f3d2e]">
-                  <span class="text-sm font-medium text-[#3f5a50] mr-1">Rs.</span>{{ flower.price.toLocaleString() }}
+                  <span class="text-sm font-medium text-[#3f5a50] mr-1">Rs.</span>{{ gift.price.toLocaleString() }}
                 </span>
                 
                 <button class="flex items-center justify-center rounded-full bg-[#0f3d2e] h-10 w-10 text-white transition-all duration-300 hover:bg-[#b68a2c] hover:scale-110 hover:shadow-lg focus:outline-none" aria-label="Add to cart">
@@ -125,7 +123,6 @@ onMounted(async () => {
 .reveal {
   opacity: 0;
   transform: translateY(40px);
-  /* Fallback agar JS kisi wajah se der mein load ho */
   animation: fallbackReveal 1s ease-out forwards 3s; 
 }
 
