@@ -9,12 +9,12 @@ import giftPackagingImg from "~/assets/images/services/gift-packaging.webp";
 
 export const useFreshFlowers = () => {
   const categories = ref([
-    { slug: "single-stems", icon: "🌷", label: "Single Stems", description: "A single perfect bloom to express your feelings", itemCount: 5 },
-    { slug: "classic-bouquets", icon: "💐", label: "Classic Bouquets", description: "Timeless arrangements crafted with seasonal blooms and lush greenery", itemCount: 5 },
-    { slug: "premium-bouquets", icon: "✨", label: "Premium Bouquets", description: "Luxury arrangements featuring rare and exotic flowers", itemCount: 4 },
-    { slug: "wedding-flowers", icon: "👰", label: "Wedding Flowers", description: "Bridal bouquets, corsages, and ceremony arrangements", itemCount: 5 },
-    { slug: "sympathy-flowers", icon: "🕊️", label: "Sympathy Flowers", description: "Thoughtful arrangements to express condolences", itemCount: 4 },
-    { slug: "seasonal-specials", icon: "🌸", label: "Seasonal Specials", description: "Limited edition arrangements featuring the season's finest blooms", itemCount: 4 },
+    { slug: "single-stems", icon: "", label: "Single Stems", description: "A single perfect bloom to express your feelings", itemCount: 5 },
+    { slug: "classic-bouquets", icon: "", label: "Classic Bouquets", description: "Timeless arrangements crafted with seasonal blooms and lush greenery", itemCount: 5 },
+    { slug: "premium-bouquets", icon: "", label: "Premium Bouquets", description: "Luxury arrangements featuring rare and exotic flowers", itemCount: 4 },
+    { slug: "wedding-flowers", icon: "", label: "Wedding Flowers", description: "Bridal bouquets, corsages, and ceremony arrangements", itemCount: 5 },
+    { slug: "sympathy-flowers", icon: "", label: "Sympathy Flowers", description: "Thoughtful arrangements to express condolences", itemCount: 4 },
+    { slug: "seasonal-specials", icon: "", label: "Seasonal Specials", description: "Limited edition arrangements featuring the season's finest blooms", itemCount: 4 },
   ]);
 
   // Maine sabhi 27 products mein unhi 4 imported variables ko use kiya hai

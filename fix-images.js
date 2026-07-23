@@ -1,0 +1,1 @@
+const fs = require('fs'); const file = 'd:/office-work/Avon_gifts_shop/app/composables/useGiftOccasions.js'; let c = fs.readFileSync(file, 'utf8'); c = c.replace(/"image": ".*?\.jpg"/g, '"image": gift1Image'); fs.writeFileSync(file, c);

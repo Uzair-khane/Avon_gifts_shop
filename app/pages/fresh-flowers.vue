@@ -2,6 +2,7 @@
 import FreshFlowersHero from "~/components/flowers/FreshFlowersHero.vue";
 import FlowerCategories from "~/components/flowers/FlowerCategories.vue";
 import FlowerGrid from "~/components/flowers/FlowerGrid.vue";
+import SearchBar from "~/components/common/SearchBar.vue";
 
 const { categories, pending, error, getByCategory } = useFreshFlowers();
 
@@ -11,6 +12,7 @@ const filteredFlowers = computed(() => getByCategory(activeSlug.value));
 <template>
   <div>
     <FreshFlowersHero />
+    <SearchBar />
     <div>
       <FlowerCategories
         :categories="categories"
