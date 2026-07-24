@@ -20,11 +20,11 @@ export const useFreshFlowers = () => {
   // Maine sabhi 27 products mein unhi 4 imported variables ko use kiya hai
   const flowers = ref([
     // Single Stems
-    { id: 1, name: "Single Red Rose", category: "single-stems", price: 800, image: freshFlowersImg, badge: "Best Seller" },
+    { id: 1, name: "Single Red Rose", category: "single-stems", price: 800, image: freshFlowersImg, },
     { id: 2, name: "Single White Rose", category: "single-stems", price: 800, image: giftOccasionsImg },
     { id: 3, name: "Single Sunflower", category: "single-stems", price: 700, image: eventDecorationImg },
     { id: 4, name: "Single Lily Stem", category: "single-stems", price: 900, image: giftPackagingImg },
-    { id: 5, name: "Single Orchid Stem", category: "single-stems", price: 1200, image: freshFlowersImg, badge: "New" },
+    { id: 5, name: "Single Orchid Stem", category: "single-stems", price: 1200, image: freshFlowersImg, },
 
     // Classic Bouquets
     { id: 6, name: "Rustic Garden Bunch", category: "classic-bouquets", price: 2800, image: giftOccasionsImg },

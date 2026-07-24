@@ -15,7 +15,7 @@
     <!-- Light Overlay -->
     <div class="absolute inset-0 bg-gradient-to-r from-[#fbf7ef]/92 via-[#fbf7ef]/60 to-[#fbf7ef]/20"></div>
     <div class="absolute inset-0 bg-white/10"></div>
-
+    
     <div class="relative z-10 flex h-full min-h-[60vh] flex-col justify-center px-6 md:px-16">
       <p class="mb-3 text-sm font-semibold tracking-widest text-[#0f3d2e]">
         FRESH & HANDPICKED
