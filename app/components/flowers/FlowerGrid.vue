@@ -69,14 +69,14 @@ onMounted(async () => {
           </div>
         </div>
 
-        <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:gap-10">
+        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:gap-6">
           <article
             v-for="(flower, i) in getByCategory(cat.slug)"
             :key="flower.id"
             :style="{ transitionDelay: `${(i % 3) * 100}ms` }"
-            class="reveal group flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgb(15,61,46,0.06)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgb(15,61,46,0.12)] border border-[#0f3d2e]/5"
+            class="reveal group flex flex-col overflow-hidden rounded-lg bg-white shadow-[0_8px_30px_rgb(15,61,46,0.06)] transition-all duration-700 ease-out hover:-translate-y-4 hover:shadow-[0_20px_40px_rgb(15,61,46,0.12)] border border-[#0f3d2e]/5"
           >
-            <div class="relative aspect-[4/3] w-full overflow-hidden sm:aspect-[4/5]">
+            <div class="relative aspect-[3/2] w-full overflow-hidden sm:aspect-[4/3]">
               <img
                 :src="flower.image"
                 :alt="flower.name"
@@ -94,15 +94,15 @@ onMounted(async () => {
               </span>
             </div>
 
-            <div class="relative flex flex-1 flex-col justify-between p-6 sm:p-8">
+            <div class="relative flex flex-1 flex-col justify-between p-4 sm:p-5">
               <div>
-                <div class="mb-4 h-[2px] w-8 rounded-full bg-[#b68a2c] transition-all duration-500 group-hover:w-16"></div>
+                <div class="mb-2 h-[2px] w-8 rounded-full bg-[#b68a2c] transition-all duration-500 group-hover:w-16"></div>
                 <h3 class="text-xl font-bold tracking-tight text-[#071c15] transition-colors duration-300 group-hover:text-[#0f3d2e]">
                   {{ flower.name }}
                 </h3>
               </div>
 
-              <div class="mt-8 flex items-center justify-between border-t border-[#0f3d2e]/5 pt-6">
+              <div class="mt-2 flex items-center justify-between border-t border-[#0f3d2e]/5 pt-2">
                 <span class="text-xl font-black text-[#0f3d2e]">
                   <span class="text-sm font-medium text-[#3f5a50] mr-1">Rs.</span>{{ flower.price.toLocaleString() }}
                 </span>
@@ -124,14 +124,14 @@ onMounted(async () => {
 <style scoped>
 .reveal {
   opacity: 0;
-  transform: translateY(40px);
-  /* Fallback agar JS kisi wajah se der mein load ho */
-  animation: fallbackReveal 1s ease-out forwards 3s; 
+  --tw-translate-y: 40px;
+  transform: translate(var(--tw-translate-x, 0), var(--tw-translate-y, 0)) rotate(var(--tw-rotate, 0)) skewX(var(--tw-skew-x, 0)) skewY(var(--tw-skew-y, 0)) scaleX(var(--tw-scale-x, 1)) scaleY(var(--tw-scale-y, 1));
 }
 
 .reveal-visible {
   opacity: 1 !important;
-  transform: translateY(0) !important;
+  --tw-translate-y: 0px;
+  transform: translate(var(--tw-translate-x, 0), var(--tw-translate-y, 0)) rotate(var(--tw-rotate, 0)) skewX(var(--tw-skew-x, 0)) skewY(var(--tw-skew-y, 0)) scaleX(var(--tw-scale-x, 1)) scaleY(var(--tw-scale-y, 1)) !important;
   transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   animation: none;
 }

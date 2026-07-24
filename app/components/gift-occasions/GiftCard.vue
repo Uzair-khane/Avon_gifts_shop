@@ -1,7 +1,7 @@
 <template>
   <article
     :style="{ transitionDelay: `${(index % 3) * 100}ms` }"
-    class="reveal group flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgb(15,61,46,0.06)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgb(15,61,46,0.12)] border border-[#0f3d2e]/5"
+    class="reveal group flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgb(15,61,46,0.06)] transition-all duration-700 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgb(15,61,46,0.12)] border border-[#0f3d2e]/5"
   >
     <div class="relative aspect-[3/2] w-full overflow-hidden sm:aspect-[4/3]">
       <img
@@ -67,13 +67,15 @@ const formatPrice = (price) => {
 <style scoped>
 .reveal {
   opacity: 0;
-  transform: translateY(40px);
+  --tw-translate-y: 40px;
+  transform: translate(var(--tw-translate-x, 0), var(--tw-translate-y, 0)) rotate(var(--tw-rotate, 0)) skewX(var(--tw-skew-x, 0)) skewY(var(--tw-skew-y, 0)) scaleX(var(--tw-scale-x, 1)) scaleY(var(--tw-scale-y, 1));
   animation: fallbackReveal 1s ease-out forwards 3s; 
 }
 
 .reveal-visible {
   opacity: 1 !important;
-  transform: translateY(0) !important;
+  --tw-translate-y: 0px;
+  transform: translate(var(--tw-translate-x, 0), var(--tw-translate-y, 0)) rotate(var(--tw-rotate, 0)) skewX(var(--tw-skew-x, 0)) skewY(var(--tw-skew-y, 0)) scaleX(var(--tw-scale-x, 1)) scaleY(var(--tw-scale-y, 1)) !important;
   transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   animation: none;
 }
